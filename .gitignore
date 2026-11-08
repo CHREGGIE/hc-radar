@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Node
+node_modules/
+.next/
+dist/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Data (NPPES files are large)
+data/
+output/
+*.zip
+
+.DS_Store
