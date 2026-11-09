@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClaimProof Interview Guide</title>
+<style>
+  :root { --ink: #1a1a1a; --muted: #5b5b5b; --rule: #c9c9c9; --accent: #8a1c1c; --bg: #ffffff; }
+  @page { size: Letter; margin: 0.45in 0.5in; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 9.4pt/1.32 "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .page { max-width: 7.5in; margin: 0 auto; padding: 16px; }
+  @media print { .page { padding: 0; max-width: none; } }
+  header { display: flex; justify-content: space-between; align-items: baseline;
+           border-bottom: 2px solid var(--ink); padding-bottom: 4px; margin-bottom: 7px; }
+  h1 { font-size: 15pt; margin: 0; letter-spacing: -0.2px; }
+  .meta { font-size: 8.5pt; color: var(--muted); }
+  .fields { display: grid; grid-template-columns: 1.4fr 1.4fr 1fr 1fr; gap: 4px 12px;
+            font-size: 8.5pt; margin-bottom: 7px; }
+  .fields span { border-bottom: 1px solid var(--rule); padding-bottom: 9px; color: var(--muted); }
+  .rules { background: #f3f3f3; padding: 5px 8px; font-size: 8.6pt; margin-bottom: 7px; }
+  .rules b { color: var(--accent); }
+  ol.q { margin: 0; padding: 0; list-style: none; counter-reset: q; }
+  ol.q > li { counter-increment: q; padding: 4px 0 0 22px; position: relative;
+              border-top: 1px solid var(--rule); }
+  ol.q > li::before { content: counter(q); position: absolute; left: 0; top: 4px;
+                      font-weight: 700; font-size: 11pt; color: var(--accent); }
+  .ask { font-weight: 700; }
+  .probe { color: var(--muted); font-size: 8.5pt; margin: 1px 0 0; }
+  .tests { font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.4px; color: var(--accent); }
+  .notes { height: 50px; }
+  .notes.tall { height: 58px; }
+  .last { font-style: italic; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 6px;
+           border-top: 2px solid var(--ink); padding-top: 5px; }
+  h2 { font-size: 9.6pt; margin: 0 0 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+  ul { margin: 0; padding-left: 15px; }
+  li { margin: 0; }
+  .numbers td { border-bottom: 1px solid var(--rule); padding: 2px 4px 5px 0; font-size: 8.5pt; }
+  .numbers td:last-child { width: 38%; }
+  table { border-collapse: collapse; width: 100%; }
+  .kill { color: var(--accent); font-weight: 700; }
+  .outreach { font-size: 8.3pt; color: var(--muted); margin-top: 6px; border-top: 1px solid var(--rule);
+              padding-top: 4px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1>ClaimProof — Distributor Interview</h1>
+    <div class="meta">15 min · research, not a pitch</div>
+  </header>
+
+  <div class="fields">
+    <span>Company / revenue:</span><span>Name / role:</span><span>Date:</span><span>Product category:</span>
+  </div>
+
+  <div class="rules">
+    <b>Rules:</b> Ask about the <b>past</b>, not hypotheticals, until Q6. Don't describe the product before Q6.
+    Write down the <b>numbers they actually say</b> ("about 40 a month", "$180k last year"), not your impression.
+    Silence is fine; let them fill it. Target roles: controller/CFO, AR manager, customer service manager.
+  </div>
+
+  <ol class="q">
+    <li>
+      <div class="ask">How many damage or shortage credits did you issue last year, and roughly what total value?</div>
+      <div class="probe">Probe: Is that tracked, or a guess? Biggest single claim? What share of revenue?</div>
+      <div class="tests">Tests: unverified credits are a meaningful dollar amount</div>
+      <div class="notes"></div>
+    </li>
+    <li>
+      <div class="ask">How do claims arrive, and who approves them?</div>
+      <div class="probe">Probe: Email, phone, portal, rep? Who issues the credit, and is there a dollar limit before sign-off?</div>
+      <div class="tests">Tests: someone owns the problem</div>
+      <div class="notes"></div>
+    </li>
+    <li>
+      <div class="ask">What evidence do you require? What happens when it's missing?</div>
+      <div class="probe">Probe: Do you match photos to the shipment (BOL, POD, label)? Do you ever credit with no photo at all?</div>
+      <div class="notes"></div>
+    </li>
+    <li>
+      <div class="ask">Have you caught a fake or recycled photo, or suspected one?</div>
+      <div class="probe">Probe: Tell me about the last time. How did you notice? What did you do with that account?</div>
+      <div class="notes"></div>
+    </li>
+    <li>
+      <div class="ask">Are some accounts claiming far more than others? What do you do about it?</div>
+      <div class="probe">Probe: Do you know their claim rate vs. other accounts? Has it cost you a customer relationship?</div>
+      <div class="tests">Tests: budget and appetite to act</div>
+      <div class="notes"></div>
+    </li>
+    <li>
+      <div class="ask last">(Last) If every claim came through a link that verified photos and matched them to the shipment,
+        would your customers use it? Would you require it above a certain dollar amount?</div>
+      <div class="probe">Probe: What threshold? Which customers would push back? Who would sign off on paying for it?</div>
+      <div class="tests">Tests: customers will accept a capture link (likely deal-breaker)</div>
+      <div class="notes tall"></div>
+    </li>
+  </ol>
+
+  <div class="grid2">
+    <div>
+      <h2>Numbers they said</h2>
+      <table class="numbers">
+        <tr><td>Claims / year</td><td></td></tr>
+        <tr><td>Total credits $ / year</td><td></td></tr>
+        <tr><td>Share issued without verifying</td><td></td></tr>
+        <tr><td>Link threshold ($)</td><td></td></tr>
+      </table>
+    </div>
+    <div>
+      <h2>Verdict</h2>
+      <ul>
+        <li><span class="kill">Kill</span> if credits are small, or they'd never ask customers to use a link.</li>
+        <li><b>Promising</b> if credits are material, approval is loose, and they'd require the link above a threshold.</li>
+        <li>Ask for one intro to a peer distributor.</li>
+      </ul>
+      <div style="margin-top:4px;font-size:8.5pt">Circle: &nbsp; Kill &nbsp; · &nbsp; Unclear &nbsp; · &nbsp; Promising</div>
+    </div>
+  </div>
+
+  <div class="outreach">
+    <b>Outreach:</b> "Hi [Name], I'm researching how distributors verify damage claims. Could I ask you a few
+    questions for 15 minutes? Not selling anything; happy to share what I learn from the other conversations."
+  </div>
+</div>
+</body>
+</html>

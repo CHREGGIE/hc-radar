@@ -26,5 +26,6 @@
 See `specs/new-practice-radar.md`, Phase 1. Don't start until the Phase 0 gate passes.
 
 ## ClaimProof — validation only
-- [ ] Turn the ClaimProof section of `research/interview-guides.md` into a one-page printable guide.
+- [x] Turn the ClaimProof section of `research/interview-guides.md` into a one-page printable guide.
+      → `research/claimproof-interview-guide.pdf` (source: `.html`, Letter, 1 page).
 - [ ] No product code until Greg reports interview results.
