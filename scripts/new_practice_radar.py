@@ -174,6 +174,8 @@ def main():
     ap.add_argument("--file", action="append", help="local NPPES zip (monthly or weekly); repeatable")
     ap.add_argument("--weeks", type=int, default=1, help="if no --file: newest weekly files to download")
     ap.add_argument("--as-of", help="window end date YYYY-MM-DD (default: latest enumeration date in data)")
+    ap.add_argument("--exclude-dme", action="store_true",
+                    help="drop rows whose primary taxonomy is Durable Medical Equipment & Medical Supplies")
     ap.add_argument("--out")
     a = ap.parse_args()
     state = a.state.upper()
@@ -201,6 +203,15 @@ def main():
     in_window = (df.enumeration_date > start) & (df.enumeration_date <= as_of)
     new = df[in_window].copy()
 
+    if a.exclude_dme:
+        dme_codes = set(taxonomy.index[taxonomy["Classification"]
+                        .eq("Durable Medical Equipment & Medical Supplies")])
+        codes = new.primary_taxonomy_code.fillna("")
+        is_dme = codes.isin(dme_codes) | codes.str.startswith("332B")
+        print(f"Excluding {int(is_dme.sum())} DME enrollment(s) "
+              "(NUCC classification 'Durable Medical Equipment & Medical Supplies').", file=sys.stderr)
+        new = new[~is_dme].copy()
+
     # Informational (not a flag yet): how many OTHER org NPIs enumerated before the window share
     # this practice address. Only meaningful with the monthly full file as input.
     prior_counts = df[df.enumeration_date <= start].addr_key.value_counts()
@@ -225,7 +236,8 @@ def main():
     real = new[new.likely_real_opening]
     print(f"\nWindow: {start.date()} (excl) to {as_of.date()} ({a.days} days); "
           f"{len(df):,} {state} org NPIs in input")
-    print(f"{len(new)} new {state} organization NPIs ({len(real)} with no noise flags)\n")
+    print(f"{len(new)} new {state} organization NPIs ({len(real)} with no noise flags)"
+          f"{' — DME excluded' if a.exclude_dme else ''}\n")
     print("Top specialties (all new):\n", new.specialty.value_counts().head(15).to_string(), "\n")
     print("Top specialties (no flags):\n", real.specialty.value_counts().head(15).to_string(), "\n")
     print("Top cities:\n", new.city.str.title().value_counts().head(10).to_string(), "\n")
