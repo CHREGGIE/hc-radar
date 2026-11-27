@@ -1,0 +1,18 @@
+# gitleaks.toml — Sharpcom Quality Kit
+# Tuned default config: gitleaks ships a strong default rule set; this file exists to
+# (a) pin that we scan everything, and (b) hold repo-specific allowlists in ONE place.
+# Copy to the repo root as .gitleaks.toml (or gitleaks.toml) and add paths below.
+
+[extend]
+useDefault = true
+
+# Repo-specific allowlist. Add real files/paths with a comment on WHY each is safe.
+[[allowlist]]
+description = "WELL-known example/test secrets in fixtures"
+paths = ['''gitleaks\.toml''', '''test/fixtures/.*''', '''sample-report.*''']
+
+# Example entries — adjust per repo:
+# [[allowlist]]
+# description = "Vercel-Auth placeholder in docs, not a real token"
+# regexes = ['''Vercel-Auth-Placeholder''']
+# paths = ['''docs/.*''']
